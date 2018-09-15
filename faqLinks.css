@@ -128,21 +128,32 @@ html {
     -moz-transform: translateY(10px);
     -ms-transform: translateY(10px);
     transform: translateY(10px); }
-  .newFaqBox h2:hover::after, .newFaqBox h2:focus::after {
-    opacity: 1;
-    -webkit-transform: translateY(0px);
-    -moz-transform: translateY(0px);
-    -ms-transform: translateY(0px);
-    transform: translateY(0px); }
-  .newFaqBox .headingFaq:hover .triangleContainer:hover {
-    cursor: pointer; }
-  .newFaqBox .headingFaq:hover h2:hover {
-    cursor: pointer;
-    color: rgba(255,255,255,0.9); }
   .newFaqBox .headingFaqClick .triangleContainer > img {
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg); }
   .newFaqBox .headingFaqClick h2 {
+    color: rgba(255,255,255,0.9); }
+
+    /* for mobile let underline persist after click */
+  html.is-touch-device .headingFaqClick h2:after {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px); 
+  } 
+
+
+ html.is-not-touch-device .newFaqBox h2:hover::after, .newFaqBox h2:focus::after {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px); }
+  html.is-not-touch-device .newFaqBox .headingFaq:hover .triangleContainer:hover {
+    cursor: pointer; }
+  html.is-not-touch-device .newFaqBox .headingFaq:hover h2:hover {
+    cursor: pointer;
     color: rgba(255,255,255,0.9); }
