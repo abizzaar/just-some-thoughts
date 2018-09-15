@@ -1,0 +1,95 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="faqLinks.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="./handlebars.min-latest.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<script id="handlebars-template" type="text/x-handlebars-template">
+  <div id="title">
+    just some thoughts
+  </div>
+  <div id="faqContainer">
+  {{#each faq}}
+  <div class="newFaqBox">
+    <div class="headingFaq">
+      <div class="triangleContainer"><img src="triangle.svg"></div>
+      <h2>{{this.h2}}</h2>
+    </div>
+    
+    <p>{{this.p}}</p>
+  </div>
+  {{/each}}
+  </div>
+</script>
+
+<script>
+  //Retrieve the template data from the HTML .
+  var template = $('#handlebars-template').html();
+  var data = { "faq": [
+    {
+      "h2": "How much time is required each day?",
+      "p": "Our courses are designed to require approximately an hour of studying each day. Advanced students may finish more quickly. Students who need a little more time can take as long as they need. eAchieve Academy offers you an flexible online school environment putting you and your family in charge of your study schedule."
+    },
+    {
+      "h2": "How much time is required each day?",
+      "p": "Our courses are designed to require approximately an hour of studying each day. Advanced students may finish more quickly. Students who need a little more time can take as long as they need. eAchieve Academy offers you an flexible online school environment putting you and your family in charge of your study schedule."
+    },
+    {
+      "h2": "How much time is required each day?",
+      "p": "Our courses are designed to require approximately an hour of studying each day. Advanced students may finish more quickly. Students who need a little more time can take as long as they need. eAchieve Academy offers you an flexible online school environment putting you and your family in charge of your study schedule."
+    },
+    {
+      "h2": "How much time is required each day?",
+      "p": "Our courses are designed to require approximately an hour of studying each day. Advanced students may finish more quickly. Students who need a little more time can take as long as they need. eAchieve Academy offers you an flexible online school environment putting you and your family in charge of your study schedule."
+    },
+    {
+      "h2": "How much time is required each day?",
+      "p": "Our courses are designed to require approximately an hour of studying each day. Advanced students may finish more quickly. Students who need a little more time can take as long as they need. eAchieve Academy offers you an flexible online school environment putting you and your family in charge of your study schedule."
+    },
+    {
+      "h2": "How much time is required each day?",
+      "p": "Our courses are designed to require approximately an hour of studying each day. Advanced students may finish more quickly. Students who need a little more time can take as long as they need. eAchieve Academy offers you an flexible online school environment putting you and your family in charge of your study schedule."
+    },
+    {
+      "h2": "How much time is required each day?",
+      "p": "Our courses are designed to require approximately an hour of studying each day. Advanced students may finish more quickly. Students who need a little more time can take as long as they need. eAchieve Academy offers you an flexible online school environment putting you and your family in charge of your study schedule."
+    },
+    
+  ] };
+
+  //Compile the template data into a function
+  var templateScript = Handlebars.compile(template);
+
+  var html = templateScript(data);
+  //html = 'My name is Ritesh Kumar . I am a developer.'
+
+  $(document.body).append(html);
+</script>
+
+<script>
+$("#faqContainer").find("p").slideUp(0);
+
+$(".headingFaq").click(function() {
+		let thisObject = $(this);
+    	if (thisObject.hasClass("clicked-once")) {
+    		thisObject.parent().find("p").slideUp(300);
+    		thisObject.removeClass("headingFaqClick");
+    		thisObject.removeClass("clicked-once");
+    	}
+		else {
+			$("p").slideUp(300);
+			$(".headingFaq").removeClass("headingFaqClick")
+			$(".headingFaq").removeClass("clicked-once");
+			thisObject.parent().find("p").slideDown(300);
+			thisObject.addClass("headingFaqClick");
+			thisObject.addClass("clicked-once");
+		}
+	});
+</script>
+ </body>
+
+
