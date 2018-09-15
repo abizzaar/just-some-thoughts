@@ -138,11 +138,11 @@ html {
     cursor: pointer; }
   .newFaqBox .headingFaq:hover h2:hover {
     cursor: pointer;
-    color: rgba(255,255,255,0.75); }
+    color: rgba(255,255,255,0.9); }
   .newFaqBox .headingFaqClick .triangleContainer > img {
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg); }
   .newFaqBox .headingFaqClick h2 {
-    color: rgba(255,255,255,0.75); }
+    color: rgba(255,255,255,0.9); }

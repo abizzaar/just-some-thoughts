@@ -81,9 +81,6 @@ $(".headingFaq").click(function() {
     		thisObject.removeClass("clicked-once");
     	}
 		else {
-			$("p").slideUp(300);
-			$(".headingFaq").removeClass("headingFaqClick")
-			$(".headingFaq").removeClass("clicked-once");
 			thisObject.parent().find("p").slideDown(300);
 			thisObject.addClass("headingFaqClick");
 			thisObject.addClass("clicked-once");
